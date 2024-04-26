@@ -1,0 +1,18 @@
+###
+GET http://localhost:1234/movies/
+
+###
+GET http://localhost:1234/movies/8fb17ae1-bdfe-45e5-a871-4772d7e526b8
+
+
+###
+GET http://localhost:1234/movies?genre=crime 
+
+
+###
+PATCH  http://localhost:1234/movies/6a360a18-c645-4b47-9a7b-2a71babbf3e0
+Content-Type: application/json
+
+{
+  "year": 1952
+}
