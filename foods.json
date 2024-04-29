@@ -4,7 +4,7 @@
       "name": "Arroz Blanco",
       "servingSize": 100,
       "calories": 130,
-      "foodType": "comida",
+      "foodType": "guarnición",
       "picture":
         "https://cdn3.iconfinder.com/data/icons/food-and-drink-color/64/food_rice_bowl_healthy_restaurant_cooking_meal-512.png"
     },
@@ -13,7 +13,7 @@
       "name": "Carne Asada",
       "servingSize": 150,
       "calories": 250,
-      "foodType": "comida",
+      "foodType": "plato principal",
       "picture":
         "https://cdn1.iconfinder.com/data/icons/cuisine-food/128/food-restaurant-meal-steak-meat-grilled-cooked-512.png"
     },

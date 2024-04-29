@@ -2,6 +2,9 @@ import foods from "../foods.json" with {type: 'json'}
 import {randomUUID} from 'crypto'
 
 export class FoodModel {
+
+
+    static data = foods
     static async getAll({ typeFood }) {
         if (typeFood) {
             const foodByType= foods.filter((food) =>
@@ -26,16 +29,13 @@ export class FoodModel {
 
 
     static async create({ input }) {
-        const food = foods.find((food) => food.name === input.name);
-        if (food) {
-            return res.status(409).json({ error: "Food already exists" });
-         }
          const newFood = {
             foodId: randomUUID(),
             ...input
         };
 
         foods.push(newFood);
+        return newFood
     }
 
     static async delete({ id }) {

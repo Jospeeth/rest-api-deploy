@@ -16,3 +16,19 @@ Content-Type: application/json
 {
   "calories": 150
 }
+###
+POST http://localhost:1234/foods
+Content-Type: application/json
+
+{
+  "name": "Arroz negro",
+  "servingSize": 100,
+  "calories": 130,
+  "foodType": "guarnición",
+  "picture": "https://cdn3.iconfinder.com/data/icons/food-and-drink-color/64/food_rice_bowl_healthy_restaurant_cooking_meal-512.png"
+}
+
+
+
+### 
+DELETE http://localhost:1234/foods/e85a7401-e5c7-452d-90a1-a63e37c387c4
