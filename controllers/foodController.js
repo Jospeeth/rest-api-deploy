@@ -1,4 +1,4 @@
-import { FoodModel } from "../models/foodModel.js";
+import { FoodModel } from "../models/database/foodsMysql.js";
 import { validateFood, validatePartialFood } from "../schemas/schemaFood.js";
 
 export class foodController {
@@ -11,20 +11,29 @@ export class foodController {
   static async getById(req, res) {
     const { id } = req.params;
     const food = await FoodModel.getById({ id });
-    if (food) return res.json(food);
-    res.status(404).send("Food not found");
+    if (food.length !== 0) return res.json(food);
+    return res.status(404).json({
+      error: "404",
+      message: "Food not found",
+    });
+
   }
 
   static async create(req, res) {
     const result = validateFood(req.body);
-    const foods = await FoodModel.getAll(result.data.foodType);
-    const food = foods.find((food) => food.name === result.data.name);
-    if (food) {
-      return res.status(409).json({ error: "Food already exists" });
+
+    if(result.error) {
+      return res.status(400).json({ error: result.error })
     }
+    //const foods = await FoodModel.getAll(result.data.foodType);
+    // const food = foods.find((food) => food.name === result.data.name);
+    // if (food) {
+    //   return res.status(409).json({ error: "Food already exists" });
+    // }
 
     const newFood = await FoodModel.create({ input: result.data });
-    
+    console.log(newFood)
+
     res.status(201).json({food: newFood});
 
 

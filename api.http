@@ -2,7 +2,7 @@
 GET http://localhost:1234/foods/
 
 ###
-GET http://localhost:1234/foods/2
+GET http://localhost:1234/foods/1
 
 
 ###
@@ -24,7 +24,7 @@ Content-Type: application/json
   "name": "Arroz negro",
   "servingSize": 100,
   "calories": 130,
-  "foodType": "guarnición",
+  "foodType": "italiana",
   "picture": "https://cdn3.iconfinder.com/data/icons/food-and-drink-color/64/food_rice_bowl_healthy_restaurant_cooking_meal-512.png"
 }
 

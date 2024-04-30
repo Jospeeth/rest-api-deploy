@@ -1,5 +1,4 @@
 import foods from "../foods.json" with {type: 'json'}
-import {randomUUID} from 'crypto'
 
 export class FoodModel {
 
@@ -30,7 +29,7 @@ export class FoodModel {
 
     static async create({ input }) {
          const newFood = {
-            foodId: randomUUID(),
+            foodId: foods.length + 1,
             ...input
         };
 
